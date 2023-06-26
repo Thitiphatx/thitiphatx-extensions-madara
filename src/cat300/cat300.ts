@@ -22,8 +22,8 @@ export const cat300Info: SourceInfo = {
     websiteBaseURL: DOMAIN,
     sourceTags: [
         {
-            text: 'Notifications',
-            type: TagType.GREEN
+            text: '18+',
+            type: TagType.RED
         }
     ]
 }
@@ -32,7 +32,7 @@ export class cat300 extends Madara {
 
     baseUrl: string = DOMAIN
 
-    languageCode: LanguageCode = LanguageCode.ENGLISH
+    languageCode: LanguageCode = LanguageCode.THAI
 
     override hasAdvancedSearchPage = true
 
