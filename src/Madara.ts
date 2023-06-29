@@ -183,15 +183,8 @@ export abstract class Madara extends Source {
         }
 
         const request = createRequestObject({
-            url: !this.alternativeChapterAjaxEndpoint ? `${this.baseUrl}/wp-admin/admin-ajax.php` : `${this.baseUrl}/${this.sourceTraversalPathName}/${mangaId}/ajax/chapters`,
-            method: 'POST',
-            headers: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
-            data: {
-                'action': 'manga_get_chapters',
-                'manga': await this.getNumericId(mangaId)
-            }
+            url: `${this.baseUrl}/${this.sourceTraversalPathName}/${mangaId}/ajax/chapters`,
+            method: 'GET',
         })
 
         const data = await this.requestManager.schedule(request, 1)

@@ -58,7 +58,7 @@ export class Parser {
         let sortingIndex = 0
 
         // For each available chapter..
-        for (const obj of $('li.wp-manga-chapter  ').toArray()) {
+        for (const obj of $('li.wp-manga-chapter').toArray()) {
             const id = ($('a', obj).first().attr('href') || '').replace(`${source.baseUrl}/${source.sourceTraversalPathName}/`, '').replace(/\/$/, '')
             const chapName = $('a', obj).first().text().trim() ?? ''
 
