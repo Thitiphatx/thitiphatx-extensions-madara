@@ -1,7 +1,7 @@
 {
   "name": "extensions-generic-0.8",
   "version": "0.8.0",
-  "repositoryName": "Madara Generic (0.8)",
+  "repositoryName": "Thitiphatx extension Madara 0.8",
   "description": "Madara Generic for 0.8!",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test": "npx paperback test",
     "nodemon": "nodemon"
   },
-  "author": "Netsky",
+  "author": "Thitiphatx",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
