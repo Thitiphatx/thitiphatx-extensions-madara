@@ -26,6 +26,8 @@ export class Parser {
         const isOngoing = $('div.summary-content', $('div.post-content_item').last()).text().toLowerCase().trim() == 'ongoing'
         const genres: Tag[] = []
 
+        genres.push(createTag({ label: author, id: author }))
+
         // Grab genres and check for smut tag
         for (const obj of $('div.genres-content a').toArray()) {
             const label = $(obj).text()

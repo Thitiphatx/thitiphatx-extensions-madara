@@ -181,11 +181,20 @@ export abstract class Madara extends Source {
         if (!isNaN(Number(mangaId))) {
             throw new Error('Migrate your source to the same source but make sure to select include migrated manga. Then while it is migrating, press "Mark All" and Replace.')
         }
-
-        const request = createRequestObject({
-            url: `${this.baseUrl}/${this.sourceTraversalPathName}/${mangaId}/ajax/chapters`,
-            method: 'GET',
-        })
+        let request;
+        if (this.alternativeChapterAjaxEndpoint) {
+            request = createRequestObject({
+                url: `${this.baseUrl}/${this.sourceTraversalPathName}/${mangaId}/ajax/chapters`,
+                method: 'GET',
+            })
+        }
+        else {
+            request = createRequestObject({
+                url: `${this.baseUrl}/${this.sourceTraversalPathName}/${mangaId}`,
+                method: 'GET',
+            })
+        }
+        
 
         const data = await this.requestManager.schedule(request, 1)
         this.CloudFlareError(data.status)
